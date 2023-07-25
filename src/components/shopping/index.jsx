@@ -1,16 +1,15 @@
-import React from 'react'
-import styles from './shopping.module.scss'
+import React from 'react';
+import styles from './shopping.module.scss';
 import { useState } from 'react';
+import ShoppingCard from './ShoppingCard';
 
-
-
-const Shopping = ({ isOpened,cartToggleHandle ,items = [], onRemove }) => {
+const Shopping = ({ isOpened, cartToggleHandle, items = [], onRemove }) => {
   return (
     <div
       className={
         isOpened
-          ? "absolute w-full bg-background-opacity h-full left-0 top-0 z-20"
-          : "hidden absolute w-full bg-background-opacity h-full left-0 top-0"
+          ? 'absolute overflow-y-hidden w-full bg-background-opacity h-full left-0 top-0 z-20'
+          : 'hidden absolute w-full bg-background-opacity h-full left-0 top-0'
       }
     >
       <div className="absolute flex flex-col w-[425px] z-10 h-full bg-background-white right-0 p-8 ">
@@ -27,35 +26,9 @@ const Shopping = ({ isOpened,cartToggleHandle ,items = [], onRemove }) => {
         <div className="shopping__wrapper flex-col flex-1 mt-10 overflow-y-auto px-4">
           {items.length > 0 ? (
             <div className="w-full h-full flex flex-col">
-              <div className=''>
                 {items.map((item) => (
-                  <div className="border border-solid border-black p-5 flex gap-5 mt-7 rounded-lg">
-                    <div className=" w-[70px] h-[70px] shrink-1 grow-1">
-                      <img
-                        className="w-full h-full"
-                        src={item.imageUrl}
-                        width={70}
-                        height={70}
-                        alt="NIke krassovki"
-                      />
-                    </div>
-                    <div className="flex gap-4 flex-col">
-                      <span className="text-xs font-semibold">
-                        {item.title}
-                      </span>
-                      <span className="text-xl font-bold">
-                        {item.price} руб.
-                      </span>
-                    </div>
-                    <img
-                      onClick={() => onRemove(item.id)}
-                      className="cursor-pointer"
-                      src="/assets/btn-remove.svg"
-                      alt="Remove"
-                    />
-                  </div>
+                  <ShoppingCard key={item.id} item={item} onRemove ={onRemove}/>
                 ))}
-              </div>
               <div className="absolute bottom-4 w-[320px] bg-background-white pt-5">
                 <ul>
                   <li className="relative flex items-center gap-2 ">
@@ -99,6 +72,6 @@ const Shopping = ({ isOpened,cartToggleHandle ,items = [], onRemove }) => {
       </div>
     </div>
   );
-}
+};
 
 export default Shopping;
