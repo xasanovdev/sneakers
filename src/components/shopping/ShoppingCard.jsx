@@ -3,7 +3,7 @@ import React from 'react'
 const ShoppingCard = ({item , onRemove}) => {
   return (
     <>
-      <div className="border border-solid border-black p-5 flex gap-5 mt-7 rounded-lg">
+      <div className="flex gap-5 mt-7 p-5 rounded-lg">
         <div className=" w-[70px] h-[70px] shrink-1 grow-1">
           <img
             className="w-full h-full"
@@ -19,6 +19,8 @@ const ShoppingCard = ({item , onRemove}) => {
         </div>
         <img
           onClick={() => onRemove(item.id)}
+          width={40}
+          height={40}
           className="cursor-pointer"
           src="/assets/btn-remove.svg"
           alt="Remove"

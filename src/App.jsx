@@ -73,13 +73,13 @@ function App() {
       />
 
       <div className="hero__section mt-24 py-20 px-10 border border-solid border-background-opacity">
-        <div className="hero__section-title flex justify-between ">
-          <h1 className="text-4xl font-extrabold ">
+        <div className="hero__section-title flex justify-center flex-col md:flex-row md:gap-12">
+          <h1 className="text-4xl font-extrabold text-left whitespace-nowrap">
             {searchValue
               ? `Поиск по запросу :"${searchValue}"`
               : 'Все кроссовки'}
           </h1>
-          <div className="hero__section-search relative flex gap-4 items-center justify-center border border-solid border-background-opacity">
+          <div className="hero__section-search w-full md:mt-0 mt-4  relative flex gap-4 items-center justify-center border border-solid border-background-opacity">
             <img
               className="cursor-pointer pl-2 border-none outline-none "
               src="/assets/search.svg"
@@ -94,7 +94,7 @@ function App() {
               />
             )}
             <input
-              className="w-[180px]"
+              className="w-full p-2"
               type="text "
               placeholder="Поиск..."
               value={searchValue}

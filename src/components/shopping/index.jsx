@@ -25,7 +25,7 @@ const Shopping = ({ isOpened, cartToggleHandle, items = [], onRemove }) => {
         </div>
         <div className="shopping__wrapper flex-col flex-1 mt-10 overflow-y-auto px-4">
           {items.length > 0 ? (
-            <div className="w-full h-full flex flex-col">
+            <div className="w-full h-full flex flex-col items-center justify-start">
                 {items.map((item) => (
                   <ShoppingCard key={item.id} item={item} onRemove ={onRemove}/>
                 ))}
