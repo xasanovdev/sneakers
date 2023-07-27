@@ -72,7 +72,7 @@ function App() {
         onRemove={onRemoveItem}
       />
 
-      <div className="hero__section mt-24 py-20 px-10 border border-solid border-background-opacity">
+      <div className="hero__section py-5 px-6 mt-24 md:py-20 md:px-10 border border-solid border-background-opacity">
         <div className="hero__section-title flex justify-center flex-col md:flex-row md:gap-12">
           <h1 className="text-4xl font-extrabold text-left whitespace-nowrap">
             {searchValue
@@ -102,7 +102,7 @@ function App() {
             />
           </div>
         </div>
-        <div className="hero__section-sneakers grid grid-cols-1 gap-4 lg:grid-cols-4 sm:grid-cols-2 md:grid-cols-3 mt-8 items-center justify-center">
+        <div className="hero__section-sneakers grid grid-cols-1 gap-6 lg:gap-6 md:gap-4 lg:grid-cols-4 sm:grid-cols-2 md:grid-cols-3 mt-8 items-center justify-center">
           {items
             .filter((item) =>
               item.title.toLowerCase().includes(searchValue.toLowerCase())

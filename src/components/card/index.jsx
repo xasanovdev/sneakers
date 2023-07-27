@@ -27,7 +27,7 @@ const Card = ({ title, imageUrl,price, onPlus, onFavorite}) => {
         height={32}
         alt=""
       />
-      <img width={133} height={112} src={imageUrl} alt="" />
+      <img src={imageUrl} alt="" />
       <div className="block ">
         <p className="">{title}</p>
         <div className="flex justify-between mt-4">
