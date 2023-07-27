@@ -39,6 +39,12 @@ function App() {
         setCartItems((prev) => [...prev, response.data]);
       });
   };
+  useEffect(
+    () => {
+      onRemoveItem()
+    },
+    items
+  );
   const onRemoveItem = (id) => {
     axios
       .delete(`https://643b94fa70ea0e660296b34a.mockapi.io/cart/${id}`)
@@ -96,7 +102,7 @@ function App() {
             />
           </div>
         </div>
-        <div className="hero__section-sneakers flex flex-wrap gap-5 mt-8 items-center justify-center">
+        <div className="hero__section-sneakers grid grid-cols-1 gap-4 lg:grid-cols-4 sm:grid-cols-2 md:grid-cols-3 mt-8 items-center justify-center">
           {items
             .filter((item) =>
               item.title.toLowerCase().includes(searchValue.toLowerCase())
@@ -108,7 +114,7 @@ function App() {
                 price={item.price}
                 imageUrl={item.imageUrl}
                 onFavorite={() => onFavorites(item)}
-                onPlus={(obj) => onAddToCart(item)}
+                onPlus={() => onAddToCart(item)}
               />
             ))}
         </div>

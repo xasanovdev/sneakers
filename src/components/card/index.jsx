@@ -18,7 +18,7 @@ const Card = ({ title, imageUrl,price, onPlus, onFavorite}) => {
 
 
   return (
-    <div className="flex flex-col w-[210px] py-5 px-9 border-background-opacity border border-solid rounded-xl">
+    <div className="flex flex-col w-full h-full py-5 px-9 border-background-opacity border border-solid rounded-xl">
       <img
         className="absolute cursor-pointer z-0"
         onClick={cartToggleLiked}
